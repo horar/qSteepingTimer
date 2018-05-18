@@ -12,7 +12,7 @@ environment:
   matrix:
   - GENERATOR: '"Visual Studio 15 2017 Win64"'
     BUILD_TYPE: Release
-    TARGET: all
+    TARGET: ALL_BUILD
 cache: .\build -> appveyor.yml
 build_script:
 - cmd: >-

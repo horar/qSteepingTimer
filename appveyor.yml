@@ -28,7 +28,7 @@ build_script:
 
     cd .\build
 
-    cmake -G %GENERATOR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ..
+    cmake -G %GENERATOR% ..
 
     cmake --build . --config %BUILD_TYPE% --target %TARGET%
 

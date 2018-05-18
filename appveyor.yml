@@ -1,0 +1,35 @@
+version: '{branch}-{build}'
+pull_requests:
+  do_not_increment_build_number: true
+branches:
+  except:
+  - gh-pages
+image: Visual Studio 2017
+clone_depth: 10
+environment:
+  QT5: C:\Qt\5.10.1\msvc2017_64
+  NSIS: C:\Program Files (x86)\NSIS
+  matrix:
+  - GENERATOR: '"Visual Studio 15 2017 Win64"'
+    BUILD_TYPE: Release
+    TARGET: all
+cache: .\build -> appveyor.yml
+build_script:
+- cmd: >-
+    set
+
+    set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+
+    set PATH=%QT5%\bin;%PATH%
+
+    set PATH="%NSIS%";%PATH%
+
+    if not exist build md build
+
+    cd .\build
+
+    cmake -G %GENERATOR% -DCMAKE_BUILD_TYPE=%BUILD_TYPE% ..
+
+    cmake --build . --config %BUILD_TYPE% --target %TARGET%
+
+test: off

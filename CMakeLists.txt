@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
 
-project(qSteepingTimer)
+project(qSteepingTimer
+    LANGUAGES CXX
+)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)

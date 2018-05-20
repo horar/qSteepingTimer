@@ -19,4 +19,6 @@ find_package(Qt5 5.10 REQUIRED
     COMPONENTS Core
 )
 
+add_definitions(-DQT_NO_CAST_FROM_ASCII)
+add_definitions(-DQT_NO_CAST_TO_ASCII)
 add_subdirectory(gui)

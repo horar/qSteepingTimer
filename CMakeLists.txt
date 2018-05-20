@@ -31,4 +31,12 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x051000)
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII)
 add_definitions(-DQT_NO_CAST_TO_ASCII)
+include(FeatureSummary)
+
 add_subdirectory(gui)
+
+feature_summary(WHAT
+    ALL
+    INCLUDE_QUIET_PACKAGES
+    FATAL_ON_MISSING_REQUIRED_PACKAGES
+)

@@ -1,16 +1,25 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
 
-project(qSteepingTimer)
+project(qSteepingTimer
+    LANGUAGES CXX
+)
+
+message(STATUS "Building ${PROJECT_NAME} v${PROJECT_VERSION} [cmake]")
+
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_compile_options("-Wall")
+add_compile_options("-Wextra")
+add_compile_options("-Wpedantic")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt5Core)
-
-add_executable(${PROJECT_NAME}
-    "main.cpp"
+find_package(Qt5 5.10 REQUIRED
+    COMPONENTS Core
 )
 
-target_link_libraries(${PROJECT_NAME}
-    Qt5::Core
-)
+add_subdirectory(gui)

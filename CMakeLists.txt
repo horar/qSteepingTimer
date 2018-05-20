@@ -16,7 +16,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
 find_package(Qt5 5.10 REQUIRED
-    COMPONENTS Core
+    COMPONENTS Core Gui Widgets
 )
 
 # The following define makes your compiler emit warnings if you use
